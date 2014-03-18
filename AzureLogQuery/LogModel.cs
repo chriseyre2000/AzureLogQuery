@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace AzureLogQuery
 {
@@ -12,5 +9,7 @@ namespace AzureLogQuery
         public DateTime Timestamp { get; set; }
         public int Level { get; set; }
         public string Message { get; set; }
+        public string DeploymentId { get; set; }
+        public string Role { get; set; }
     }
 }

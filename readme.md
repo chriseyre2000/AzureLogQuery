@@ -13,3 +13,7 @@ Invoke-WebRequest -uri http://localhost:63387/dev/Ever/3 | select -ExpandPropert
 dev is the name of the app config setting that contains connection string for the local emulator, Ever is a dumb filter asking for all dates. 3 is for the Level or less to filter for.
 
 For now we have Ever, LastDay, LastHour.
+
+There is also a minimal view version 
+
+http://localhost:63387/View/dev/Ever/3

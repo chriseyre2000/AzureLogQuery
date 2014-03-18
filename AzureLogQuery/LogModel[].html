@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Log Viewer</title>
+    <style>
+        th {
+            text-align: left;
+        }
+        td {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr><th>Level</th><th>Timestamp</th><th>Deployment Id</th><th>Role</th><th>Message</th></tr>
+    @Each
+        <tr><td>@Current.Level</td><td>@Current.Timestamp</td><td>@Current.DeploymentId</td><td>@Current.Role</td><td>@Current.Message</td></tr>
+    @EndEach
+    </table>
+</body>
+</html>

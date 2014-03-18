@@ -1,16 +1,14 @@
 ﻿using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Web;
 
 namespace AzureLogQuery
 {
     public class LogQuery
     {
-        public LogModel[] Query(string environment, LogPeriod period, int level)
+        public LogModel[] Execute(string environment, LogPeriod period, int level)
         {
             string connectionString = ConfigurationManager.AppSettings[environment];
 
@@ -34,6 +32,8 @@ namespace AzureLogQuery
                     Level = x.Properties["Level"].Int32Value.Value,
                     Timestamp = x.Timestamp.UtcDateTime,
                     Message = x.Properties["Message"].StringValue,
+                    DeploymentId = x.Properties["DeploymentId"].StringValue,
+                    Role = x.Properties["Role"].StringValue,
                 }).ToArray();
 
             return items;
